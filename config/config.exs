@@ -20,7 +20,7 @@ config :raulnor, RaulnorWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Raulnor.PubSub,
-  live_view: [signing_salt: "4tnJyM0e"]
+  live_view: [signing_salt: "ySsSAnf1"]
 
 # Configures the mailer
 #

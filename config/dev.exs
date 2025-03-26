@@ -2,13 +2,10 @@ import Config
 
 # Configure your database
 config :raulnor, Raulnor.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "raulnor_dev",
+  database: Path.expand("../raulnor_dev.db", __DIR__),
+  pool_size: 5,
   stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  show_sensitive_data_on_connection_error: true
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -23,7 +20,7 @@ config :raulnor, RaulnorWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "Q/bOlG1cLFxGrQskXAHGO5pmqCCVwNBUUldDgZorj176Knj6VhkbyZo9UN4gs9CI",
+  secret_key_base: "VGBqQzCduJfJvX9NJzYEkwTrdSCBdwaeKATIBCoFTJPPSAQ5soJZHhiNW3yriaxy",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:raulnor, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:raulnor, ~w(--watch)]}

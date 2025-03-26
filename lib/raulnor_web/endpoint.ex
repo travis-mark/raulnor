@@ -7,7 +7,7 @@ defmodule RaulnorWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_raulnor_key",
-    signing_salt: "hYDs4VqI",
+    signing_salt: "Y9v+FjgG",
     same_site: "Lax"
   ]
 
