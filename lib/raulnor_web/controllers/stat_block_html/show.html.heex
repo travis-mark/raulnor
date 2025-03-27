@@ -1,0 +1,33 @@
+<.header>
+  Stat block {@stat_block.id}
+  <:subtitle>This is a stat_block record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/stat_blocks/#{@stat_block}/edit"}>
+      <.button>Edit stat_block</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name">{@stat_block.name}</:item>
+  <:item title="Habitat">{@stat_block.habitat}</:item>
+  <:item title="Size">{@stat_block.size}</:item>
+  <:item title="Type">{@stat_block.type}</:item>
+  <:item title="Tag">{@stat_block.tag}</:item>
+  <:item title="Alignment">{@stat_block.alignment}</:item>
+  <:item title="Ac">{@stat_block.ac}</:item>
+  <:item title="Initiative">{@stat_block.initiative}</:item>
+  <:item title="Maxhp">{@stat_block.maxhp}</:item>
+  <:item title="Speed">{@stat_block.speed}</:item>
+  <:item title="Xp">{@stat_block.xp}</:item>
+  <:item title="Str">{@stat_block.str}</:item>
+  <:item title="Con">{@stat_block.con}</:item>
+  <:item title="Dex">{@stat_block.dex}</:item>
+  <:item title="Wis">{@stat_block.wis}</:item>
+  <:item title="Int">{@stat_block.int}</:item>
+  <:item title="Cha">{@stat_block.cha}</:item>
+  <:item title="Saves">{@stat_block.saves}</:item>
+  <:item title="Detail">{@stat_block.detail}</:item>
+</.list>
+
+<.back navigate={~p"/stat_blocks"}>Back to stat_blocks</.back>

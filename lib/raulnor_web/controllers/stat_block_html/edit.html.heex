@@ -1,0 +1,8 @@
+<.header>
+  Edit Stat block {@stat_block.id}
+  <:subtitle>Use this form to manage stat_block records in your database.</:subtitle>
+</.header>
+
+<.stat_block_form changeset={@changeset} action={~p"/stat_blocks/#{@stat_block}"} />
+
+<.back navigate={~p"/stat_blocks"}>Back to stat_blocks</.back>

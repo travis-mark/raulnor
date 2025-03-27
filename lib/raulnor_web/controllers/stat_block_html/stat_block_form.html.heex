@@ -1,0 +1,27 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:name]} type="text" label="Name" />
+  <.input field={f[:habitat]} type="text" label="Habitat" />
+  <.input field={f[:size]} type="text" label="Size" />
+  <.input field={f[:type]} type="text" label="Type" />
+  <.input field={f[:tag]} type="text" label="Tag" />
+  <.input field={f[:alignment]} type="text" label="Alignment" />
+  <.input field={f[:ac]} type="number" label="Ac" />
+  <.input field={f[:initiative]} type="number" label="Initiative" />
+  <.input field={f[:maxhp]} type="number" label="Maxhp" />
+  <.input field={f[:speed]} type="text" label="Speed" />
+  <.input field={f[:xp]} type="number" label="Xp" />
+  <.input field={f[:str]} type="number" label="Str" />
+  <.input field={f[:con]} type="number" label="Con" />
+  <.input field={f[:dex]} type="number" label="Dex" />
+  <.input field={f[:wis]} type="number" label="Wis" />
+  <.input field={f[:int]} type="number" label="Int" />
+  <.input field={f[:cha]} type="number" label="Cha" />
+  <.input field={f[:saves]} type="text" label="Saves" />
+  <.input field={f[:detail]} type="text" label="Detail" />
+  <:actions>
+    <.button>Save Stat block</.button>
+  </:actions>
+</.simple_form>

@@ -20,6 +20,7 @@ defmodule RaulnorWeb.Router do
     get "/", PageController, :home
     get "/hello", HelloController, :index
     get "/hello/:name", HelloController, :show
+    resources "/stat_blocks", StatBlockController
   end
 
   # Other scopes may use custom stacks.
