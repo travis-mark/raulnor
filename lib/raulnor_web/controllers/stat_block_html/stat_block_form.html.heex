@@ -4,23 +4,73 @@
   </.error>
   <.input field={f[:name]} type="text" label="Name" />
   <.input field={f[:habitat]} type="text" label="Habitat" />
-  <.input field={f[:size]} type="text" label="Size" />
-  <.input field={f[:type]} type="text" label="Type" />
-  <.input field={f[:tag]} type="text" label="Tag" />
-  <.input field={f[:alignment]} type="text" label="Alignment" />
-  <.input field={f[:ac]} type="number" label="Ac" />
+  <.input field={f[:size]} type="select" label="Size" options={[
+      {"", ""},
+      {"Tiny", "T"},
+      {"Small", "S"},
+      {"Medium", "M"},
+      {"Large", "L"},
+      {"Huge", "H"},
+      {"Gargantuan", "G"}
+    ]} />
+  <.input field={f[:type]} type="select" label="Type" options={[
+      {"", ""},
+      {"Abberations", "A"},
+      {"Beasts", "B"},
+      {"Celestials", "C"},
+      {"Constructs", "R"},
+      {"Dragons", "D"},
+      {"Elementals", "E"},
+      {"Fey", "F"},
+      {"Fiends", "I"},
+      {"Giants", "G"},
+      {"Humanoids", "H"},
+      {"Monstrosities", "M"},
+      {"Oozes", "O"},
+      {"Plants", "P"},
+      {"Undead", "U"},
+    ]} />
+  <.input field={f[:tag]} type="select" label="Tag" options={[
+      "",
+      "Angels",
+      "Beholders",
+      "Demons",
+      "Devils",
+      "Dinosaurs",
+      "Dragons, Chromatic",
+      "Dragons, Metallic",
+      "Genies",
+      "Goblinoids",
+      "Lycanthropes",
+      "Player Characters",
+      "Titans",
+      "Yugoloths",
+    ]} />
+  <.input field={f[:alignment]} type="select" label="Alignment" options={[
+    {"", ""},
+    {"Lawful Good", "LG"},
+    {"Neutral Good", "NG"},
+    {"Chaotic Good", "CG"},
+    {"Lawful Neutral", "LN"},
+    {"True Neutral", "TN"},
+    {"Chaotic Neutral", "CN"},
+    {"Lawful Evil", "LE"},
+    {"Neutral Evil", "NE"},
+    {"Chaotic Evil", "CE"}
+  ]}  />
+  <.input field={f[:ac]} type="number" label="Armor Class" />
   <.input field={f[:initiative]} type="number" label="Initiative" />
-  <.input field={f[:maxhp]} type="number" label="Maxhp" />
+  <.input field={f[:maxhp]} type="number" label="Max HP" />
   <.input field={f[:speed]} type="text" label="Speed" />
-  <.input field={f[:xp]} type="number" label="Xp" />
-  <.input field={f[:str]} type="number" label="Str" />
-  <.input field={f[:con]} type="number" label="Con" />
-  <.input field={f[:dex]} type="number" label="Dex" />
-  <.input field={f[:wis]} type="number" label="Wis" />
-  <.input field={f[:int]} type="number" label="Int" />
-  <.input field={f[:cha]} type="number" label="Cha" />
+  <.input field={f[:xp]} type="number" label="XP" />
+  <.input field={f[:str]} type="number" label="Strength" />
+  <.input field={f[:con]} type="number" label="Constitution" />
+  <.input field={f[:dex]} type="number" label="Dexterity" />
+  <.input field={f[:wis]} type="number" label="Wisdom" />
+  <.input field={f[:int]} type="number" label="Intelligence" />
+  <.input field={f[:cha]} type="number" label="Charisma" />
   <.input field={f[:saves]} type="text" label="Saves" />
-  <.input field={f[:detail]} type="text" label="Detail" />
+  <.input field={f[:detail]} type="textarea" label="Detail" />
   <:actions>
     <.button>Save Stat block</.button>
   </:actions>

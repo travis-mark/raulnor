@@ -1,33 +1,33 @@
 <.header>
-  Stat block {@stat_block.id}
-  <:subtitle>This is a stat_block record from your database.</:subtitle>
+  {@stat_block.name}
+  <:subtitle>{@stat_block.size} {@stat_block.type}, {@stat_block.alignment}</:subtitle>
   <:actions>
     <.link href={~p"/stat_blocks/#{@stat_block}/edit"}>
-      <.button>Edit stat_block</.button>
+      <.button>Edit</.button>
     </.link>
   </:actions>
 </.header>
+<p><b>AC</b> {@stat_block.ac} <b>Initiative</b> {@stat_block.initiative}</p>
+<p><b>HP</b> {@stat_block.maxhp} <b>Speed</b> {@stat_block.speed}</p>
+<table>
+  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
+  <tr><td class="bg-amber-100">STR</td><td class="bg-amber-100">{@stat_block.str}</td><td></td></tr>
+  <tr><td class="bg-amber-100">WIS</td><td class="bg-amber-100">{@stat_block.wis}</td><td></td></tr>
+</table>
+<table>
+  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
+  <tr><td class="bg-amber-100">DEX</td><td class="bg-amber-100">{@stat_block.dex}</td><td></td><td></td></tr>
+  <tr><td class="bg-amber-100">INT</td><td class="bg-amber-100">{@stat_block.int}</td><td></td><td></td></tr>
+</table>
+<table>
+  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
+  <tr><td class="bg-amber-100">CON</td><td class="bg-amber-100">{@stat_block.con}</td><td></td></tr>
+  <tr><td class="bg-amber-100">CHA</td><td class="bg-amber-100">{@stat_block.cha}</td><td></td></tr>
+</table>
+<p>(XP {@stat_block.xp})</p>
+<div>
+  {@stat_block.detail}
+</div>
 
-<.list>
-  <:item title="Name">{@stat_block.name}</:item>
-  <:item title="Habitat">{@stat_block.habitat}</:item>
-  <:item title="Size">{@stat_block.size}</:item>
-  <:item title="Type">{@stat_block.type}</:item>
-  <:item title="Tag">{@stat_block.tag}</:item>
-  <:item title="Alignment">{@stat_block.alignment}</:item>
-  <:item title="Ac">{@stat_block.ac}</:item>
-  <:item title="Initiative">{@stat_block.initiative}</:item>
-  <:item title="Maxhp">{@stat_block.maxhp}</:item>
-  <:item title="Speed">{@stat_block.speed}</:item>
-  <:item title="Xp">{@stat_block.xp}</:item>
-  <:item title="Str">{@stat_block.str}</:item>
-  <:item title="Con">{@stat_block.con}</:item>
-  <:item title="Dex">{@stat_block.dex}</:item>
-  <:item title="Wis">{@stat_block.wis}</:item>
-  <:item title="Int">{@stat_block.int}</:item>
-  <:item title="Cha">{@stat_block.cha}</:item>
-  <:item title="Saves">{@stat_block.saves}</:item>
-  <:item title="Detail">{@stat_block.detail}</:item>
-</.list>
 
 <.back navigate={~p"/stat_blocks"}>Back to stat_blocks</.back>
