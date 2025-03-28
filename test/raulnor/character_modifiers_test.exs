@@ -32,13 +32,22 @@ defmodule Raulnor.CharacterModifiersTest do
   end
 
   describe "modifiers" do
-    test "Compute modifiers", %{venzyre: venzyre} do
+    test "compute modifiers", %{venzyre: venzyre} do
       assert ability_modifier(venzyre, :str) == 4
       assert ability_modifier(venzyre, :con) == 3
       assert ability_modifier(venzyre, :dex) == 3
       assert ability_modifier(venzyre, :wis) == 2
       assert ability_modifier(venzyre, :int) == 2
       assert ability_modifier(venzyre, :cha) == 0
+    end
+
+    test "compute saves", %{venzyre: venzyre} do
+      assert ability_save(venzyre, :str) == 6
+      assert ability_save(venzyre, :con) == 5
+      assert ability_save(venzyre, :dex) == 3
+      assert ability_save(venzyre, :wis) == 2
+      assert ability_save(venzyre, :int) == 2
+      assert ability_save(venzyre, :cha) == 0
     end
   end
 end

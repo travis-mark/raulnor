@@ -14,4 +14,8 @@ defmodule RaulnorWeb.StatBlockHTML do
   def mod(stat_block, stat) do
     Raulnor.Characters.StatBlock.ability_modifier(stat_block, stat)
   end
+
+  def save(stat_block, stat) do
+    Raulnor.Characters.StatBlock.ability_save(stat_block, stat)
+  end
 end

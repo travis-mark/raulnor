@@ -115,4 +115,24 @@ defmodule Raulnor.Characters.StatBlock do
       _ -> raise "Invalid ability score: #{score}, must be between 1 and 30"
     end
   end
+
+  def save_proficiency(%{saves: saves} = _stat_block, stat) do
+    case stat do
+      :str -> saves =~ "STR"
+      :con -> saves =~ "CON"
+      :dex -> saves =~ "DEX"
+      :wis -> saves =~ "WIS"
+      :int -> saves =~ "INT"
+      :cha -> saves =~ "CHA"
+      _ -> false
+    end
+  end
+
+  def ability_save(stat_block, stat) do
+    if save_proficiency(stat_block, stat) do
+      ability_modifier(stat_block, stat) + Raulnor.Characters.Advancement.proficiency_bonus(stat_block)
+    else
+      ability_modifier(stat_block, stat)
+    end
+  end
 end

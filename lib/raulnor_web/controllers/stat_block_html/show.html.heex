@@ -21,13 +21,13 @@
       <td class="bg-amber-100">STR</td>
       <td class="bg-amber-100">{@stat_block.str}</td>
       <td>{mod(@stat_block, :str)}</td>
-      <td></td>
+      <td>{save(@stat_block, :str)}</td>
     </tr>
     <tr>
       <td class="bg-amber-100">WIS</td>
       <td class="bg-amber-100">{@stat_block.wis}</td>
       <td>{mod(@stat_block, :wis)}</td>
-      <td></td>
+      <td>{save(@stat_block, :wis)}</td>
     </tr>
   </table>
   <table>
@@ -41,13 +41,13 @@
       <td class="bg-amber-100">DEX</td>
       <td class="bg-amber-100">{@stat_block.dex}</td>
       <td>{mod(@stat_block, :dex)}</td>
-      <td></td>
+      <td>{save(@stat_block, :dex)}</td>
     </tr>
     <tr>
       <td class="bg-amber-100">INT</td>
       <td class="bg-amber-100">{@stat_block.int}</td>
       <td>{mod(@stat_block, :int)}</td>
-      <td></td>
+      <td>{save(@stat_block, :int)}</td>
     </tr>
   </table>
   <table>
@@ -61,13 +61,13 @@
       <td class="bg-amber-100">CON</td>
       <td class="bg-amber-100">{@stat_block.con}</td>
       <td>{mod(@stat_block, :con)}</td>
-      <td></td>
+      <td>{save(@stat_block, :con)}</td>
     </tr>
     <tr>
       <td class="bg-amber-100">CHA</td>
       <td class="bg-amber-100">{@stat_block.cha}</td>
       <td>{mod(@stat_block, :cha)}</td>
-      <td></td>
+      <td>{save(@stat_block, :cha)}</td>
     </tr>
   </table>
 </div>
