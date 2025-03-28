@@ -9,25 +9,95 @@
 </.header>
 <p><b>AC</b> {@stat_block.ac} <b>Initiative</b> {@stat_block.initiative}</p>
 <p><b>HP</b> {@stat_block.maxhp} <b>Speed</b> {@stat_block.speed}</p>
-<table>
-  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
-  <tr><td class="bg-amber-100">STR</td><td class="bg-amber-100">{@stat_block.str}</td><td></td></tr>
-  <tr><td class="bg-amber-100">WIS</td><td class="bg-amber-100">{@stat_block.wis}</td><td></td></tr>
-</table>
-<table>
-  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
-  <tr><td class="bg-amber-100">DEX</td><td class="bg-amber-100">{@stat_block.dex}</td><td></td><td></td></tr>
-  <tr><td class="bg-amber-100">INT</td><td class="bg-amber-100">{@stat_block.int}</td><td></td><td></td></tr>
-</table>
-<table>
-  <tr><td></td><td></td><td>MOD</td><td>SAVE</td></tr>
-  <tr><td class="bg-amber-100">CON</td><td class="bg-amber-100">{@stat_block.con}</td><td></td></tr>
-  <tr><td class="bg-amber-100">CHA</td><td class="bg-amber-100">{@stat_block.cha}</td><td></td></tr>
-</table>
+<div class="flex flex-row">
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>MOD</td>
+      <td>SAVE</td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">STR</td>
+      <td class="bg-amber-100">{@stat_block.str}</td>
+      <td>{mod(@stat_block, :str)}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">WIS</td>
+      <td class="bg-amber-100">{@stat_block.wis}</td>
+      <td>{mod(@stat_block, :wis)}</td>
+      <td></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>MOD</td>
+      <td>SAVE</td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">DEX</td>
+      <td class="bg-amber-100">{@stat_block.dex}</td>
+      <td>{mod(@stat_block, :dex)}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">INT</td>
+      <td class="bg-amber-100">{@stat_block.int}</td>
+      <td>{mod(@stat_block, :int)}</td>
+      <td></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>MOD</td>
+      <td>SAVE</td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">CON</td>
+      <td class="bg-amber-100">{@stat_block.con}</td>
+      <td>{mod(@stat_block, :con)}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="bg-amber-100">CHA</td>
+      <td class="bg-amber-100">{@stat_block.cha}</td>
+      <td>{mod(@stat_block, :cha)}</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
 <p>(XP {@stat_block.xp})</p>
 <div>
   {@stat_block.detail}
 </div>
-
-
+<!--
+<pre>
+      <%= "{" %>
+        ac: {@stat_block.ac},
+        alignment: "{@stat_block.alignment}",
+        cha: {@stat_block.cha},
+        con: {@stat_block.con},
+        detail: "{@stat_block.detail}",
+        dex: {@stat_block.dex},
+        habitat: "{@stat_block.habitat}",
+        initiative: {@stat_block.initiative},
+        int: {@stat_block.int},
+        maxhp: {@stat_block.maxhp},
+        name: "{@stat_block.name}",
+        saves: "{@stat_block.saves}",
+        size: "{@stat_block.size}",
+        speed: "{@stat_block.speed}",
+        str: {@stat_block.str},
+        tag: "{@stat_block.tag}",
+        type: "{@stat_block.type}",
+        wis: {@stat_block.wis},
+        xp: {@stat_block.xp}
+      <%= "}" %>
+</pre>
+-->
 <.back navigate={~p"/stat_blocks"}>Back to stat_blocks</.back>

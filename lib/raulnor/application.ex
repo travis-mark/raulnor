@@ -11,8 +11,7 @@ defmodule Raulnor.Application do
       RaulnorWeb.Telemetry,
       Raulnor.Repo,
       {Ecto.Migrator,
-        repos: Application.fetch_env!(:raulnor, :ecto_repos),
-        skip: skip_migrations?()},
+       repos: Application.fetch_env!(:raulnor, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:raulnor, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Raulnor.PubSub},
       # Start the Finch HTTP client for sending emails

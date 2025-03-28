@@ -4,7 +4,11 @@
   </.error>
   <.input field={f[:name]} type="text" label="Name" />
   <.input field={f[:habitat]} type="text" label="Habitat" />
-  <.input field={f[:size]} type="select" label="Size" options={[
+  <.input
+    field={f[:size]}
+    type="select"
+    label="Size"
+    options={[
       {"", ""},
       {"Tiny", "T"},
       {"Small", "S"},
@@ -12,8 +16,13 @@
       {"Large", "L"},
       {"Huge", "H"},
       {"Gargantuan", "G"}
-    ]} />
-  <.input field={f[:type]} type="select" label="Type" options={[
+    ]}
+  />
+  <.input
+    field={f[:type]}
+    type="select"
+    label="Type"
+    options={[
       {"", ""},
       {"Abberations", "A"},
       {"Beasts", "B"},
@@ -28,9 +37,14 @@
       {"Monstrosities", "M"},
       {"Oozes", "O"},
       {"Plants", "P"},
-      {"Undead", "U"},
-    ]} />
-  <.input field={f[:tag]} type="select" label="Tag" options={[
+      {"Undead", "U"}
+    ]}
+  />
+  <.input
+    field={f[:tag]}
+    type="select"
+    label="Tag"
+    options={[
       "",
       "Angels",
       "Beholders",
@@ -44,20 +58,26 @@
       "Lycanthropes",
       "Player Characters",
       "Titans",
-      "Yugoloths",
-    ]} />
-  <.input field={f[:alignment]} type="select" label="Alignment" options={[
-    {"", ""},
-    {"Lawful Good", "LG"},
-    {"Neutral Good", "NG"},
-    {"Chaotic Good", "CG"},
-    {"Lawful Neutral", "LN"},
-    {"True Neutral", "TN"},
-    {"Chaotic Neutral", "CN"},
-    {"Lawful Evil", "LE"},
-    {"Neutral Evil", "NE"},
-    {"Chaotic Evil", "CE"}
-  ]}  />
+      "Yugoloths"
+    ]}
+  />
+  <.input
+    field={f[:alignment]}
+    type="select"
+    label="Alignment"
+    options={[
+      {"", ""},
+      {"Lawful Good", "LG"},
+      {"Neutral Good", "NG"},
+      {"Chaotic Good", "CG"},
+      {"Lawful Neutral", "LN"},
+      {"True Neutral", "TN"},
+      {"Chaotic Neutral", "CN"},
+      {"Lawful Evil", "LE"},
+      {"Neutral Evil", "NE"},
+      {"Chaotic Evil", "CE"}
+    ]}
+  />
   <.input field={f[:ac]} type="number" label="Armor Class" />
   <.input field={f[:initiative]} type="number" label="Initiative" />
   <.input field={f[:maxhp]} type="number" label="Max HP" />

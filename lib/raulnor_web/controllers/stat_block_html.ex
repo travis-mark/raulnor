@@ -10,4 +10,8 @@ defmodule RaulnorWeb.StatBlockHTML do
   attr :action, :string, required: true
 
   def stat_block_form(assigns)
+
+  def mod(stat_block, stat) do
+    Raulnor.Characters.StatBlock.ability_modifier(stat_block, stat)
+  end
 end

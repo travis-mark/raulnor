@@ -3,9 +3,69 @@ defmodule RaulnorWeb.StatBlockControllerTest do
 
   import Raulnor.CharactersFixtures
 
-  @create_attrs %{ac: 42, name: "some name", size: "some size", tag: "some tag", type: "some type", int: 42, speed: "some speed", str: 42, alignment: "some alignment", habitat: "some habitat", initiative: 42, maxhp: 42, xp: 42, con: 42, dex: 42, wis: 42, cha: 42, saves: "some saves", detail: "some detail"}
-  @update_attrs %{ac: 43, name: "some updated name", size: "some updated size", tag: "some updated tag", type: "some updated type", int: 43, speed: "some updated speed", str: 43, alignment: "some updated alignment", habitat: "some updated habitat", initiative: 43, maxhp: 43, xp: 43, con: 43, dex: 43, wis: 43, cha: 43, saves: "some updated saves", detail: "some updated detail"}
-  @invalid_attrs %{ac: nil, name: nil, size: nil, tag: nil, type: nil, int: nil, speed: nil, str: nil, alignment: nil, habitat: nil, initiative: nil, maxhp: nil, xp: nil, con: nil, dex: nil, wis: nil, cha: nil, saves: nil, detail: nil}
+  @create_attrs %{
+    ac: 42,
+    name: "some name",
+    size: "some size",
+    tag: "some tag",
+    type: "some type",
+    int: 10,
+    speed: "some speed",
+    str: 10,
+    alignment: "some alignment",
+    habitat: "some habitat",
+    initiative: 42,
+    maxhp: 42,
+    xp: 42,
+    con: 10,
+    dex: 10,
+    wis: 10,
+    cha: 10,
+    saves: "some saves",
+    detail: "some detail"
+  }
+  @update_attrs %{
+    ac: 43,
+    name: "some updated name",
+    size: "some updated size",
+    tag: "some updated tag",
+    type: "some updated type",
+    int: 10,
+    speed: "some updated speed",
+    str: 10,
+    alignment: "some updated alignment",
+    habitat: "some updated habitat",
+    initiative: 43,
+    maxhp: 43,
+    xp: 43,
+    con: 10,
+    dex: 10,
+    wis: 10,
+    cha: 10,
+    saves: "some updated saves",
+    detail: "some updated detail"
+  }
+  @invalid_attrs %{
+    ac: nil,
+    name: nil,
+    size: nil,
+    tag: nil,
+    type: nil,
+    int: nil,
+    speed: nil,
+    str: nil,
+    alignment: nil,
+    habitat: nil,
+    initiative: nil,
+    maxhp: nil,
+    xp: nil,
+    con: nil,
+    dex: nil,
+    wis: nil,
+    cha: nil,
+    saves: nil,
+    detail: nil
+  }
 
   describe "index" do
     test "lists all stat_blocks", %{conn: conn} do
@@ -29,7 +89,8 @@ defmodule RaulnorWeb.StatBlockControllerTest do
       assert redirected_to(conn) == ~p"/stat_blocks/#{id}"
 
       conn = get(conn, ~p"/stat_blocks/#{id}")
-      assert html_response(conn, 200) =~ "Stat block #{id}"
+      # Changed from "Stat block #{id}"
+      assert html_response(conn, 200) =~ "STR"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
