@@ -52,10 +52,8 @@ defmodule Raulnor.Characters.StatBlock do
     ])
     |> validate_required([
       :name,
-      :habitat,
       :size,
       :type,
-      :tag,
       :alignment,
       :ac,
       :initiative,
@@ -68,8 +66,7 @@ defmodule Raulnor.Characters.StatBlock do
       :wis,
       :int,
       :cha,
-      :saves,
-      :detail
+      :saves
     ])
   end
 
@@ -116,6 +113,21 @@ defmodule Raulnor.Characters.StatBlock do
     end
   end
 
+  def proficiency_bonus(%{xp: xp} = _stat_block) do
+    cond do
+      # Levels 1-4
+      xp < 6_500 -> 2
+      # Levels 5-8
+      xp < 48_000 -> 3
+      # Levels 9-12
+      xp < 120_000 -> 4
+      # Levels 13-16
+      xp < 225_000 -> 5
+      # Levels 17-20
+      true -> 6
+    end
+  end
+
   def save_proficiency(%{saves: saves} = _stat_block, stat) do
     case stat do
       :str -> saves =~ "STR"
@@ -130,7 +142,7 @@ defmodule Raulnor.Characters.StatBlock do
 
   def ability_save(stat_block, stat) do
     if save_proficiency(stat_block, stat) do
-      ability_modifier(stat_block, stat) + Raulnor.Characters.Advancement.proficiency_bonus(stat_block)
+      ability_modifier(stat_block, stat) + proficiency_bonus(stat_block)
     else
       ability_modifier(stat_block, stat)
     end
