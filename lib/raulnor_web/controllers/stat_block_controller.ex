@@ -6,12 +6,26 @@ defmodule RaulnorWeb.StatBlockController do
 
   def index(conn, _params) do
     stat_blocks = Characters.list_stat_blocks()
-    render(conn, :index, stat_blocks: stat_blocks)
+
+    render(conn, :index,
+      stat_blocks: stat_blocks,
+      source:
+        RaulnorWeb.CoreComponents.source_href(
+          "lib/raulnor_web/controllers/stat_block_controller.ex"
+        )
+    )
   end
 
   def new(conn, _params) do
     changeset = Characters.change_stat_block(%StatBlock{})
-    render(conn, :new, changeset: changeset)
+
+    render(conn, :new,
+      changeset: changeset,
+      source:
+        RaulnorWeb.CoreComponents.source_href(
+          "lib/raulnor_web/controllers/stat_block_controller.ex"
+        )
+    )
   end
 
   def create(conn, %{"stat_block" => stat_block_params}) do
@@ -22,19 +36,40 @@ defmodule RaulnorWeb.StatBlockController do
         |> redirect(to: ~p"/stat_blocks/#{stat_block}")
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, :new, changeset: changeset)
+        render(conn, :new,
+          changeset: changeset,
+          source:
+            RaulnorWeb.CoreComponents.source_href(
+              "lib/raulnor_web/controllers/stat_block_controller.ex"
+            )
+        )
     end
   end
 
   def show(conn, %{"id" => id}) do
     stat_block = Characters.get_stat_block!(id)
-    render(conn, :show, stat_block: stat_block)
+
+    render(conn, :show,
+      stat_block: stat_block,
+      source:
+        RaulnorWeb.CoreComponents.source_href(
+          "lib/raulnor_web/controllers/stat_block_controller.ex"
+        )
+    )
   end
 
   def edit(conn, %{"id" => id}) do
     stat_block = Characters.get_stat_block!(id)
     changeset = Characters.change_stat_block(stat_block)
-    render(conn, :edit, stat_block: stat_block, changeset: changeset)
+
+    render(conn, :edit,
+      stat_block: stat_block,
+      changeset: changeset,
+      source:
+        RaulnorWeb.CoreComponents.source_href(
+          "lib/raulnor_web/controllers/stat_block_controller.ex"
+        )
+    )
   end
 
   def update(conn, %{"id" => id, "stat_block" => stat_block_params}) do
@@ -47,7 +82,14 @@ defmodule RaulnorWeb.StatBlockController do
         |> redirect(to: ~p"/stat_blocks/#{stat_block}")
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, :edit, stat_block: stat_block, changeset: changeset)
+        render(conn, :edit,
+          stat_block: stat_block,
+          changeset: changeset,
+          source:
+            RaulnorWeb.CoreComponents.source_href(
+              "lib/raulnor_web/controllers/stat_block_controller.ex"
+            )
+        )
     end
   end
 

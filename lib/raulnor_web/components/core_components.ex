@@ -673,4 +673,13 @@ defmodule RaulnorWeb.CoreComponents do
   def translate_errors(errors, field) when is_list(errors) do
     for {^field, {msg, opts}} <- errors, do: translate_error({msg, opts})
   end
+
+  @doc """
+  Generate a link for use in a "View Source" style link.
+
+  TODO: Use github in PROD, vscode (or configurable) in dev
+  """
+  def source_href(path) do
+    Path.join(["vscode://file", File.cwd!(), path])
+  end
 end
