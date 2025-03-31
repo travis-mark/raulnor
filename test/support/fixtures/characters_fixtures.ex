@@ -9,28 +9,27 @@ defmodule Raulnor.CharactersFixtures do
   """
   def gravedirt_queen_create_attrs() do
     %{
-        ac: 13,
-        alignment: "NE",
-        cha: 15,
-        con: 16,
-        detail: "",
-        dex: 18,
-        habitat: "Forest",
-        initiative: 14,
-        int: 16,
-        maxhp: 247,
-        name: "Gravedirt Queen",
-        saves: "DEX;WIS",
-        size: "M",
-        speed: "0 ft., fly 60 ft. (hover)",
-        str: 6,
-        tag: "",
-        type: "U",
-        wis: 17,
-        xp: 8400
-      }
+      ac: 13,
+      alignment: "NE",
+      cha: 15,
+      con: 16,
+      detail: "",
+      dex: 18,
+      habitat: "Forest",
+      initiative: 14,
+      int: 16,
+      maxhp: 247,
+      name: "Gravedirt Queen",
+      saves: "DEX;WIS",
+      size: "M",
+      speed: "0 ft., fly 60 ft. (hover)",
+      str: 6,
+      tag: "",
+      type: "U",
+      wis: 17,
+      xp: 8400
+    }
   end
-
 
   @doc """
   Invalid attributes to test for errors
@@ -64,9 +63,9 @@ defmodule Raulnor.CharactersFixtures do
   """
   def gravedirt_queen_update_attrs() do
     %{
-        maxhp: 165,
-        xp: 2900
-      }
+      maxhp: 165,
+      xp: 2900
+    }
   end
 
   @doc """

@@ -28,16 +28,20 @@ defmodule Raulnor.CharactersTest do
 
     test "update_stat_block/2 with valid data updates the stat_block" do
       stat_block = stat_block_fixture()
+
       assert {:ok, %StatBlock{} = stat_block} =
                Characters.update_stat_block(stat_block, gravedirt_queen_update_attrs())
+
       assert stat_block.maxhp == 165
       assert stat_block.xp == 2900
     end
 
     test "update_stat_block/2 with invalid data returns error changeset" do
       stat_block = stat_block_fixture()
+
       assert {:error, %Ecto.Changeset{}} =
                Characters.update_stat_block(stat_block, invalid_attrs())
+
       assert stat_block == Characters.get_stat_block!(stat_block.id)
     end
 

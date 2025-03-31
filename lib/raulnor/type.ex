@@ -1,5 +1,6 @@
 defmodule Raulnor.Types do
   use Raulnor.Choices
+
   def all() do
     [
       {"", ""},

@@ -7,7 +7,7 @@ defmodule Raulnor.Choices do
   @callback list_for_select() :: list({String.t(), String.t()})
   @callback text_for_value(String.t()) :: String.t() | nil
 
-    defmacro __using__(_opts) do
+  defmacro __using__(_opts) do
     quote do
       @behaviour Raulnor.Choices
 

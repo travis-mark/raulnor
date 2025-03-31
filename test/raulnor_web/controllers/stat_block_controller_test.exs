@@ -3,7 +3,6 @@ defmodule RaulnorWeb.StatBlockControllerTest do
 
   import Raulnor.CharactersFixtures
 
-
   describe "index" do
     test "lists all stat_blocks", %{conn: conn} do
       conn = get(conn, ~p"/stat_blocks")
