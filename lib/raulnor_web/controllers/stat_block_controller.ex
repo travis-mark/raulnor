@@ -17,10 +17,12 @@ defmodule RaulnorWeb.StatBlockController do
   end
 
   def new(conn, _params) do
+    sizes = Characters.StatBlock.sizes()
     changeset = Characters.change_stat_block(%StatBlock{})
 
     render(conn, :new,
       changeset: changeset,
+      sizes: sizes,
       source:
         RaulnorWeb.CoreComponents.source_href(
           "lib/raulnor_web/controllers/stat_block_controller.ex"
@@ -59,10 +61,12 @@ defmodule RaulnorWeb.StatBlockController do
   end
 
   def edit(conn, %{"id" => id}) do
+    sizes = Characters.StatBlock.sizes()
     stat_block = Characters.get_stat_block!(id)
     changeset = Characters.change_stat_block(stat_block)
 
     render(conn, :edit,
+      sizes: sizes,
       stat_block: stat_block,
       changeset: changeset,
       source:

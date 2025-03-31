@@ -147,4 +147,15 @@ defmodule Raulnor.Characters.StatBlock do
       ability_modifier(stat_block, stat)
     end
   end
+
+  def sizes do [
+      {"", ""},
+      {"Tiny", "T"},
+      {"Small", "S"},
+      {"Medium", "M"},
+      {"Large", "L"},
+      {"Huge", "H"},
+      {"Gargantuan", "G"}
+    ]
+  end
 end

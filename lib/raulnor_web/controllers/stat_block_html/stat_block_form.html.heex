@@ -8,15 +8,7 @@
     field={f[:size]}
     type="select"
     label="Size"
-    options={[
-      {"", ""},
-      {"Tiny", "T"},
-      {"Small", "S"},
-      {"Medium", "M"},
-      {"Large", "L"},
-      {"Huge", "H"},
-      {"Gargantuan", "G"}
-    ]}
+    options={@sizes}
   />
   <.input
     field={f[:type]}

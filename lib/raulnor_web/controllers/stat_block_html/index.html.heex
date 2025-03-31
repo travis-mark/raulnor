@@ -9,24 +9,9 @@
 
 <.table id="stat_blocks" rows={@stat_blocks} row_click={&JS.navigate(~p"/stat_blocks/#{&1}")}>
   <:col :let={stat_block} label="Name">{stat_block.name}</:col>
-  <:col :let={stat_block} label="Habitat">{stat_block.habitat}</:col>
-  <:col :let={stat_block} label="Size">{stat_block.size}</:col>
+  <:col :let={stat_block} label="Size">{size(stat_block.size)}</:col>
   <:col :let={stat_block} label="Type">{stat_block.type}</:col>
-  <:col :let={stat_block} label="Tag">{stat_block.tag}</:col>
   <:col :let={stat_block} label="Alignment">{stat_block.alignment}</:col>
-  <:col :let={stat_block} label="Ac">{stat_block.ac}</:col>
-  <:col :let={stat_block} label="Initiative">{stat_block.initiative}</:col>
-  <:col :let={stat_block} label="Maxhp">{stat_block.maxhp}</:col>
-  <:col :let={stat_block} label="Speed">{stat_block.speed}</:col>
-  <:col :let={stat_block} label="Xp">{stat_block.xp}</:col>
-  <:col :let={stat_block} label="Str">{stat_block.str}</:col>
-  <:col :let={stat_block} label="Con">{stat_block.con}</:col>
-  <:col :let={stat_block} label="Dex">{stat_block.dex}</:col>
-  <:col :let={stat_block} label="Wis">{stat_block.wis}</:col>
-  <:col :let={stat_block} label="Int">{stat_block.int}</:col>
-  <:col :let={stat_block} label="Cha">{stat_block.cha}</:col>
-  <:col :let={stat_block} label="Saves">{stat_block.saves}</:col>
-  <:col :let={stat_block} label="Detail">{stat_block.detail}</:col>
   <:action :let={stat_block}>
     <div class="sr-only">
       <.link navigate={~p"/stat_blocks/#{stat_block}"}>Show</.link>

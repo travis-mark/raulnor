@@ -18,4 +18,12 @@ defmodule RaulnorWeb.StatBlockHTML do
   def save(stat_block, stat) do
     Raulnor.Characters.StatBlock.ability_save(stat_block, stat)
   end
+
+  def size(abbrev) do
+    sizes = Raulnor.Characters.StatBlock.sizes()
+    case Enum.find(sizes, fn {_name, code} -> code == abbrev end) do
+      {name, _code} -> name
+      nil -> nil
+    end
+  end
 end
