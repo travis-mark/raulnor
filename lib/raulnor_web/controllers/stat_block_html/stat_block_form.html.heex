@@ -6,7 +6,12 @@
   <.input field={f[:habitat]} type="text" label="Habitat" />
   <.input field={f[:size]} type="select" label="Size" options={Raulnor.Sizes.list_for_select()} />
   <.input field={f[:type]} type="select" label="Type" options={Raulnor.Types.list_for_select()} />
-  <.input field={f[:alignment]} type="select" label="Alignment" options={Raulnor.Alignment.list_for_select()} />
+  <.input
+    field={f[:alignment]}
+    type="select"
+    label="Alignment"
+    options={Raulnor.Alignment.list_for_select()}
+  />
   <.input
     field={f[:tag]}
     type="select"
@@ -29,9 +34,9 @@
     ]}
   />
   <div class="flex flex-row gap-2 justify-between">
-  <.input field={f[:ac]} type="number" label="Armor Class" />
-  <.input field={f[:initiative]} type="number" label="Initiative" />
-  <.input field={f[:maxhp]} type="number" label="Max HP" />
+    <.input field={f[:ac]} type="number" label="Armor Class" />
+    <.input field={f[:initiative]} type="number" label="Initiative" />
+    <.input field={f[:maxhp]} type="number" label="Max HP" />
   </div>
   <.input field={f[:speed]} type="text" label="Speed" />
   <.input field={f[:xp]} type="number" label="XP" />

@@ -36,6 +36,15 @@ defmodule Raulnor.CharactersTest do
       assert stat_block.xp == 2900
     end
 
+    test "Ability score min/max" do
+      stat_block = stat_block_fixture()
+
+      for ability <- [:str, :con, :dex, :wis, :int, :cha], value <- [0, 31] do
+        {result, _} = Characters.update_stat_block(stat_block, Map.put(%{}, ability, value))
+        assert result == :error, "Invalid value #{value} allowed for #{ability}"
+      end
+    end
+
     test "update_stat_block/2 with invalid data returns error changeset" do
       stat_block = stat_block_fixture()
 

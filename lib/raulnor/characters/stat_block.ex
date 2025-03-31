@@ -70,6 +70,12 @@ defmodule Raulnor.Characters.StatBlock do
     ])
     |> validate_inclusion(:size, Raulnor.Sizes.values())
     |> validate_inclusion(:type, Raulnor.Types.values())
+    |> validate_inclusion(:str, 1..30)
+    |> validate_inclusion(:con, 1..30)
+    |> validate_inclusion(:dex, 1..30)
+    |> validate_inclusion(:wis, 1..30)
+    |> validate_inclusion(:int, 1..30)
+    |> validate_inclusion(:cha, 1..30)
   end
 
   @spec ability_modifier(any(), :cha | :con | :dex | :int | :str | :wis) :: integer()
