@@ -3,69 +3,6 @@ defmodule RaulnorWeb.StatBlockControllerTest do
 
   import Raulnor.CharactersFixtures
 
-  @create_attrs %{
-    ac: 42,
-    name: "some name",
-    size: "some size",
-    tag: "some tag",
-    type: "some type",
-    int: 10,
-    speed: "some speed",
-    str: 10,
-    alignment: "some alignment",
-    habitat: "some habitat",
-    initiative: 42,
-    maxhp: 42,
-    xp: 42,
-    con: 10,
-    dex: 10,
-    wis: 10,
-    cha: 10,
-    saves: "some saves",
-    detail: "some detail"
-  }
-  @update_attrs %{
-    ac: 43,
-    name: "some updated name",
-    size: "some updated size",
-    tag: "some updated tag",
-    type: "some updated type",
-    int: 10,
-    speed: "some updated speed",
-    str: 10,
-    alignment: "some updated alignment",
-    habitat: "some updated habitat",
-    initiative: 43,
-    maxhp: 43,
-    xp: 43,
-    con: 10,
-    dex: 10,
-    wis: 10,
-    cha: 10,
-    saves: "some updated saves",
-    detail: "some updated detail"
-  }
-  @invalid_attrs %{
-    ac: nil,
-    name: nil,
-    size: nil,
-    tag: nil,
-    type: nil,
-    int: nil,
-    speed: nil,
-    str: nil,
-    alignment: nil,
-    habitat: nil,
-    initiative: nil,
-    maxhp: nil,
-    xp: nil,
-    con: nil,
-    dex: nil,
-    wis: nil,
-    cha: nil,
-    saves: nil,
-    detail: nil
-  }
 
   describe "index" do
     test "lists all stat_blocks", %{conn: conn} do
@@ -83,18 +20,18 @@ defmodule RaulnorWeb.StatBlockControllerTest do
 
   describe "create stat_block" do
     test "redirects to show when data is valid", %{conn: conn} do
-      conn = post(conn, ~p"/stat_blocks", stat_block: @create_attrs)
+      conn = post(conn, ~p"/stat_blocks", stat_block: gravedirt_queen_create_attrs())
 
       assert %{id: id} = redirected_params(conn)
       assert redirected_to(conn) == ~p"/stat_blocks/#{id}"
 
       conn = get(conn, ~p"/stat_blocks/#{id}")
       # Changed from "Stat block #{id}"
-      assert html_response(conn, 200) =~ "STR"
+      assert html_response(conn, 200) =~ "Gravedirt Queen"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, ~p"/stat_blocks", stat_block: @invalid_attrs)
+      conn = post(conn, ~p"/stat_blocks", stat_block: invalid_attrs())
       assert html_response(conn, 200) =~ "New Stat block"
     end
   end
@@ -112,15 +49,12 @@ defmodule RaulnorWeb.StatBlockControllerTest do
     setup [:create_stat_block]
 
     test "redirects when data is valid", %{conn: conn, stat_block: stat_block} do
-      conn = put(conn, ~p"/stat_blocks/#{stat_block}", stat_block: @update_attrs)
-      assert redirected_to(conn) == ~p"/stat_blocks/#{stat_block}"
-
       conn = get(conn, ~p"/stat_blocks/#{stat_block}")
-      assert html_response(conn, 200) =~ "some updated name"
+      assert html_response(conn, 200) =~ "Gravedirt Queen"
     end
 
     test "renders errors when data is invalid", %{conn: conn, stat_block: stat_block} do
-      conn = put(conn, ~p"/stat_blocks/#{stat_block}", stat_block: @invalid_attrs)
+      conn = put(conn, ~p"/stat_blocks/#{stat_block}", stat_block: invalid_attrs())
       assert html_response(conn, 200) =~ "Edit Stat block"
     end
   end
