@@ -8,6 +8,7 @@ defmodule RaulnorWeb.StatBlockHTML do
   """
   attr :changeset, Ecto.Changeset, required: true
   attr :action, :string, required: true
+  attr :sizes, :list
 
   def stat_block_form(assigns)
 
