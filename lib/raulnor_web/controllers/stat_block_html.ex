@@ -19,6 +19,7 @@ defmodule RaulnorWeb.StatBlockHTML do
     Raulnor.Characters.StatBlock.ability_save(stat_block, stat)
   end
 
+  def alignment(abbrev), do: Raulnor.Alignment.text_for_value(abbrev)
   def size(abbrev), do: Raulnor.Sizes.text_for_value(abbrev)
   def type(abbrev), do: Raulnor.Types.text_for_value(abbrev)
 end

@@ -1,6 +1,8 @@
 <.header>
   {@stat_block.name}
-  <:subtitle>{size(@stat_block.size)} {type(@stat_block.type)}, {@stat_block.alignment}</:subtitle>
+  <:subtitle>
+    {size(@stat_block.size)} {type(@stat_block.type)}, {alignment(@stat_block.alignment)}
+  </:subtitle>
   <:actions>
     <.link href={~p"/stat_blocks/#{@stat_block}/edit"}>
       <.button>Edit</.button>

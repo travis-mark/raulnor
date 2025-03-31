@@ -27,23 +27,7 @@
       "Yugoloths"
     ]}
   />
-  <.input
-    field={f[:alignment]}
-    type="select"
-    label="Alignment"
-    options={[
-      {"", ""},
-      {"Lawful Good", "LG"},
-      {"Neutral Good", "NG"},
-      {"Chaotic Good", "CG"},
-      {"Lawful Neutral", "LN"},
-      {"True Neutral", "TN"},
-      {"Chaotic Neutral", "CN"},
-      {"Lawful Evil", "LE"},
-      {"Neutral Evil", "NE"},
-      {"Chaotic Evil", "CE"}
-    ]}
-  />
+  <.input field={f[:alignment]} type="select" label="Alignment" options={Raulnor.Alignment.list_for_select()} />
   <.input field={f[:ac]} type="number" label="Armor Class" />
   <.input field={f[:initiative]} type="number" label="Initiative" />
   <.input field={f[:maxhp]} type="number" label="Max HP" />
