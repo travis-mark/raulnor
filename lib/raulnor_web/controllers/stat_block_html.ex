@@ -8,7 +8,6 @@ defmodule RaulnorWeb.StatBlockHTML do
   """
   attr :changeset, Ecto.Changeset, required: true
   attr :action, :string, required: true
-  attr :sizes, :list
 
   def stat_block_form(assigns)
 
@@ -20,11 +19,6 @@ defmodule RaulnorWeb.StatBlockHTML do
     Raulnor.Characters.StatBlock.ability_save(stat_block, stat)
   end
 
-  def size(abbrev) do
-    sizes = Raulnor.Characters.StatBlock.sizes()
-    case Enum.find(sizes, fn {_name, code} -> code == abbrev end) do
-      {name, _code} -> name
-      nil -> nil
-    end
-  end
+  def size(abbrev), do: Raulnor.Sizes.text_for_value(abbrev)
+  def type(abbrev), do: Raulnor.Types.text_for_value(abbrev)
 end

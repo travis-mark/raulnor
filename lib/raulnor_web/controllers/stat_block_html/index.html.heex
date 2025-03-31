@@ -10,7 +10,7 @@
 <.table id="stat_blocks" rows={@stat_blocks} row_click={&JS.navigate(~p"/stat_blocks/#{&1}")}>
   <:col :let={stat_block} label="Name">{stat_block.name}</:col>
   <:col :let={stat_block} label="Size">{size(stat_block.size)}</:col>
-  <:col :let={stat_block} label="Type">{stat_block.type}</:col>
+  <:col :let={stat_block} label="Type">{type(stat_block.type)}</:col>
   <:col :let={stat_block} label="Alignment">{stat_block.alignment}</:col>
   <:action :let={stat_block}>
     <div class="sr-only">

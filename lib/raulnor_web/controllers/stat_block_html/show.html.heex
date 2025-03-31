@@ -1,6 +1,8 @@
 <.header>
   {@stat_block.name}
-  <:subtitle>{size(@stat_block.size)} {@stat_block.type}, {@stat_block.alignment}</:subtitle>
+  <:subtitle>
+    {size(@stat_block.size)} {type(@stat_block.type)}, {@stat_block.alignment}
+  </:subtitle>
   <:actions>
     <.link href={~p"/stat_blocks/#{@stat_block}/edit"}>
       <.button>Edit</.button>
@@ -76,7 +78,6 @@
 <div>
   {@stat_block.detail}
 </div>
-<!--
 <pre>
       <%= "{" %>
         ac: {@stat_block.ac},
@@ -100,5 +101,5 @@
         xp: {@stat_block.xp}
       <%= "}" %>
 </pre>
--->
+
 <.back navigate={~p"/stat_blocks"}>Back to stat_blocks</.back>

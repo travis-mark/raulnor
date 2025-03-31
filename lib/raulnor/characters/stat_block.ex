@@ -68,8 +68,11 @@ defmodule Raulnor.Characters.StatBlock do
       :cha,
       :saves
     ])
+    |> validate_inclusion(:size, Raulnor.Sizes.values())
+    |> validate_inclusion(:type, Raulnor.Types.values())
   end
 
+  @spec ability_modifier(any(), :cha | :con | :dex | :int | :str | :wis) :: integer()
   def ability_modifier(stat_block, :str), do: ability_modifier(stat_block.str)
   def ability_modifier(stat_block, :con), do: ability_modifier(stat_block.con)
   def ability_modifier(stat_block, :dex), do: ability_modifier(stat_block.dex)
@@ -146,16 +149,5 @@ defmodule Raulnor.Characters.StatBlock do
     else
       ability_modifier(stat_block, stat)
     end
-  end
-
-  def sizes do [
-      {"", ""},
-      {"Tiny", "T"},
-      {"Small", "S"},
-      {"Medium", "M"},
-      {"Large", "L"},
-      {"Huge", "H"},
-      {"Gargantuan", "G"}
-    ]
   end
 end
