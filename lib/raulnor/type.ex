@@ -1,4 +1,5 @@
 defmodule Raulnor.Types do
+  use Raulnor.Choices
   def all() do
     [
       {"", ""},
@@ -17,18 +18,5 @@ defmodule Raulnor.Types do
       {"Plant", "P"},
       {"Undead", "U"}
     ]
-  end
-
-  def values() do
-    Enum.map(all(), fn {_, v} -> v end)
-  end
-
-  def list_for_select() do
-    all()
-  end
-
-  def text_for_value(value) do
-    {text, _} = Enum.find(all(), fn {_, v} -> v == value end)
-    text
   end
 end

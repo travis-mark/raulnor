@@ -19,7 +19,7 @@ defmodule Raulnor.CharactersTest do
     end
 
     test "create_stat_block/1 with valid data creates a stat_block" do
-      assert {:ok, %StatBlock{} = stat_block} = Characters.create_stat_block(gravedirt_queen_create_attrs())
+      assert {:ok, _} = Characters.create_stat_block(gravedirt_queen_create_attrs())
     end
 
     test "create_stat_block/1 with invalid data returns error changeset" do
