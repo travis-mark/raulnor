@@ -1,0 +1,14 @@
+<.header>
+  {@character.name}
+  <:actions>
+    <.link href={~p"/characters/#{@character}/edit"}>
+      <.button>Edit</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Class">{class(@character.class)}</:item>
+</.list>
+
+<.back navigate={~p"/characters"}>Back</.back>

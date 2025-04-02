@@ -21,6 +21,7 @@ defmodule RaulnorWeb.Router do
     get "/hello", HelloController, :index
     get "/hello/:name", HelloController, :show
     resources "/stat_blocks", StatBlockController
+    resources "/characters", CharacterController
   end
 
   # Other scopes may use custom stacks.
