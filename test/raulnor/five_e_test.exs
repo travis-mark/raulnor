@@ -21,11 +21,11 @@ defmodule Raulnor.FiveETest do
     end
 
     test "create_character/1 with valid data creates a character" do
-      valid_attrs = %{name: "some name", class: 42}
+      valid_attrs = %{name: "some name", class: 1}
 
       assert {:ok, %Character{} = character} = FiveE.create_character(valid_attrs)
       assert character.name == "some name"
-      assert character.class == 42
+      assert character.class == 1
     end
 
     test "create_character/1 with invalid data returns error changeset" do
@@ -34,11 +34,11 @@ defmodule Raulnor.FiveETest do
 
     test "update_character/2 with valid data updates the character" do
       character = character_fixture()
-      update_attrs = %{name: "some updated name", class: 43}
+      update_attrs = %{name: "some updated name", class: 2}
 
       assert {:ok, %Character{} = character} = FiveE.update_character(character, update_attrs)
       assert character.name == "some updated name"
-      assert character.class == 43
+      assert character.class == 2
     end
 
     test "update_character/2 with invalid data returns error changeset" do

@@ -11,7 +11,7 @@ defmodule Raulnor.FiveEFixtures do
     {:ok, character} =
       attrs
       |> Enum.into(%{
-        class: 42,
+        class: 1,
         name: "some name"
       })
       |> Raulnor.FiveE.create_character()
