@@ -18,6 +18,7 @@ defmodule RaulnorWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/sitemap", SitemapController, :index
     get "/hello", HelloController, :index
     get "/hello/:name", HelloController, :show
     resources "/stat_blocks", StatBlockController
