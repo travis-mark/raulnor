@@ -17,7 +17,7 @@ defmodule RaulnorWeb.Router do
   scope "/", RaulnorWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", HomeController, :index
     get "/sitemap", SitemapController, :index
     get "/hello", HelloController, :index
     get "/hello/:name", HelloController, :show
