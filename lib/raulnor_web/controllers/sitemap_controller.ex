@@ -10,8 +10,6 @@ defmodule RaulnorWeb.SitemapController do
       not String.contains?(route.path, "/new")
     end)
     |> Enum.map(fn route -> route.path end)
-    render(conn, :index,
-      routes: routes,
-      source: RaulnorWeb.CoreComponents.source_href("lib/raulnor_web/controllers/sitemap_controller.ex"))
+    render(conn, :index, routes: routes)
   end
 end

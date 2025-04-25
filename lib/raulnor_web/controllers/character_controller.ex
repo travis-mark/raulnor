@@ -7,25 +7,13 @@ defmodule RaulnorWeb.CharacterController do
   def index(conn, _params) do
     characters = FiveE.list_characters()
 
-    render(conn, :index,
-      characters: characters,
-      source:
-        RaulnorWeb.CoreComponents.source_href(
-          "lib/raulnor_web/controllers/character_controller.ex"
-        )
-    )
+    render(conn, :index, characters: characters)
   end
 
   def new(conn, _params) do
     changeset = FiveE.change_character(%Character{})
 
-    render(conn, :new,
-      changeset: changeset,
-      source:
-        RaulnorWeb.CoreComponents.source_href(
-          "lib/raulnor_web/controllers/character_controller.ex"
-        )
-    )
+    render(conn, :new, changeset: changeset)
   end
 
   def create(conn, %{"character" => character_params}) do
@@ -36,40 +24,21 @@ defmodule RaulnorWeb.CharacterController do
         |> redirect(to: ~p"/characters/#{character}")
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, :new,
-          changeset: changeset,
-          source:
-            RaulnorWeb.CoreComponents.source_href(
-              "lib/raulnor_web/controllers/character_controller.ex"
-            )
-        )
+        render(conn, :new, changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
     character = FiveE.get_character!(id)
 
-    render(conn, :show,
-      character: character,
-      source:
-        RaulnorWeb.CoreComponents.source_href(
-          "lib/raulnor_web/controllers/character_controller.ex"
-        )
-    )
+    render(conn, :show, character: character)
   end
 
   def edit(conn, %{"id" => id}) do
     character = FiveE.get_character!(id)
     changeset = FiveE.change_character(character)
 
-    render(conn, :edit,
-      character: character,
-      changeset: changeset,
-      source:
-        RaulnorWeb.CoreComponents.source_href(
-          "lib/raulnor_web/controllers/character_controller.ex"
-        )
-    )
+    render(conn, :edit, character: character, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "character" => character_params}) do
@@ -82,14 +51,7 @@ defmodule RaulnorWeb.CharacterController do
         |> redirect(to: ~p"/characters/#{character}")
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, :edit,
-          character: character,
-          changeset: changeset,
-          source:
-            RaulnorWeb.CoreComponents.source_href(
-              "lib/raulnor_web/controllers/character_controller.ex"
-            )
-        )
+        render(conn, :edit, character: character, changeset: changeset)
     end
   end
 

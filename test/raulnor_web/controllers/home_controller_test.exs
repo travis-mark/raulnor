@@ -1,4 +1,4 @@
-defmodule RaulnorWeb.PageControllerTest do
+defmodule RaulnorWeb.HomeControllerTest do
   use RaulnorWeb.ConnCase
 
   test "GET /", %{conn: conn} do
