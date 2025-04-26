@@ -1,0 +1,26 @@
+<.header>
+  Listing Pages
+  <:actions>
+    <.link href={~p"/wiki/pages/new"}>
+      <.button>New Page</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="pages" rows={@pages} row_click={&JS.navigate(~p"/wiki/pages/#{&1}")}>
+  <:col :let={page} label="Title">{page.title}</:col>
+  <:col :let={page} label="Content">{page.content}</:col>
+  <:col :let={page} label="Slug">{page.slug}</:col>
+  <:col :let={page} label="Last edited by">{page.last_edited_by}</:col>
+  <:action :let={page}>
+    <div class="sr-only">
+      <.link navigate={~p"/wiki/pages/#{page}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/wiki/pages/#{page}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={page}>
+    <.link href={~p"/wiki/pages/#{page}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

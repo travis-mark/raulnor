@@ -25,6 +25,14 @@ defmodule RaulnorWeb.Router do
     resources "/characters", CharacterController
   end
 
+  scope "/wiki", RaulnorWeb do
+    pipe_through :browser
+
+    resources "/pages", PageController
+    get "/", PageController, :index
+    get "/:slug", PageController, :show_by_slug
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", RaulnorWeb do
   #   pipe_through :api
