@@ -59,4 +59,15 @@ defmodule RaulnorWeb.PageController do
     |> put_flash(:info, "Page deleted successfully.")
     |> redirect(to: ~p"/wiki/pages")
   end
+
+  def show_by_slug(conn, %{"slug" => slug}) do
+    case Wiki.get_page_by_slug(slug) do
+      nil ->
+        conn
+        |> put_flash(:info, "Page not found. Would you like to create it?")
+         |> redirect(to: ~p"/wiki/pages/new?title=#{String.replace(slug, "-", " ")}")
+      page ->
+        render(conn, "show.html", page: page)
+    end
+  end
 end

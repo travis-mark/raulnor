@@ -101,4 +101,8 @@ defmodule Raulnor.Wiki do
   def change_page(%Page{} = page, attrs \\ %{}) do
     Page.changeset(page, attrs)
   end
+
+  def get_page_by_slug(slug) do
+    Repo.get_by(Page, slug: slug)
+  end
 end
