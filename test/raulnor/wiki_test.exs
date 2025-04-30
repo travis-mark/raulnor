@@ -21,12 +21,12 @@ defmodule Raulnor.WikiTest do
     end
 
     test "create_page/1 with valid data creates a page" do
-      valid_attrs = %{title: "some title", content: "some content", slug: "some slug", last_edited_by: "some last_edited_by"}
+      valid_attrs = %{title: "some title", content: "some content", last_edited_by: "some last_edited_by"}
 
       assert {:ok, %Page{} = page} = Wiki.create_page(valid_attrs)
       assert page.title == "some title"
       assert page.content == "some content"
-      assert page.slug == "some slug"
+      assert page.slug == "some-title"
       assert page.last_edited_by == "some last_edited_by"
     end
 
@@ -36,12 +36,12 @@ defmodule Raulnor.WikiTest do
 
     test "update_page/2 with valid data updates the page" do
       page = page_fixture()
-      update_attrs = %{title: "some updated title", content: "some updated content", slug: "some updated slug", last_edited_by: "some updated last_edited_by"}
+      update_attrs = %{title: "some updated title", content: "some updated content", last_edited_by: "some updated last_edited_by"}
 
       assert {:ok, %Page{} = page} = Wiki.update_page(page, update_attrs)
       assert page.title == "some updated title"
       assert page.content == "some updated content"
-      assert page.slug == "some updated slug"
+      assert page.slug == "some-updated-title"
       assert page.last_edited_by == "some updated last_edited_by"
     end
 
